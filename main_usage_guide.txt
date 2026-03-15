@@ -1,0 +1,89 @@
+main.py 使用说明（简洁版）
+
+一、进入项目根目录
+先进入你的项目目录，再运行 main.py。
+
+示例：
+cd a23_ai_demo
+
+二、main.py 的主要作用
+1. 根据模板自动生成 profile
+2. 读取原始文档（可选）
+3. 读取 RAG 中间 JSON（可选）
+4. 进行抽取 / 后处理
+5. 填写 Excel 或 Word 模板
+6. 输出结果文件和 report_bundle.json
+
+三、最常用参数
+--template
+模板路径，必须传。
+
+--input-dir
+原始文档目录，可选。
+
+--rag-json
+RAG 中间结果 JSON，可选。
+
+--prefer-rag-structured
+如果 RAG JSON 里已经有结构化结果，就优先直接使用。
+
+--use-profile-llm
+自动生成 profile 时，启用本地模型辅助判断字段类型。
+
+--profile-output
+指定自动生成的 profile 保存路径。
+
+--output-dir
+指定输出目录。
+
+四、最常用调用方式
+
+1. 模板 + 原始文档
+适合完整链路测试
+
+python main.py --template data/template/2025年中国城市经济百强全景报告-模板.xlsx --input-dir data/in
+
+2. 模板 + 原始文档 + RAG JSON
+适合你和 RAG 同学现在的协作方式
+
+python main.py --template data/template/2025年中国城市经济百强全景报告-模板.xlsx --input-dir data/in --rag-json data/rag_input/2025年中国城市经济百强全景报告_rag中间转换.json
+
+3. 模板 + RAG 结构化结果直灌
+适合只测你这边下游填表能力
+
+python main.py --template data/template/2025年中国城市经济百强全景报告-模板.xlsx --rag-json data/rag_input/2025年中国城市经济百强全景报告_rag中间转换.json --prefer-rag-structured
+
+4. 指定输出目录
+避免覆盖以前测试结果
+
+python main.py --template data/template/2025年中国城市经济百强全景报告-模板.xlsx --rag-json data/rag_input/2025年中国城市经济百强全景报告_rag中间转换.json --prefer-rag-structured --output-dir output/test_run_01
+
+五、输出文件说明
+运行成功后，通常会生成：
+
+result.json
+最终抽取结果
+
+result.xlsx
+填写后的 Excel 文件
+
+result.docx
+如果模板是 Word，则生成这个文件
+
+report_bundle.json
+汇总调试信息、耗时信息、结果信息
+
+六、目录建议
+模板放在：
+data/template/
+
+原始文档放在：
+data/in/
+
+RAG 中间 JSON 放在：
+data/rag_input/
+
+七、推荐当前测试命令
+如果你现在主要想测试自动生成 profile + main 主流程 + 填表，推荐先用：
+
+python main.py --template data/template/2025年中国城市经济百强全景报告-模板.xlsx --rag-json data/rag_input/2025年中国城市经济百强全景报告_rag中间转换.json --prefer-rag-structured --output-dir output/test_run_01

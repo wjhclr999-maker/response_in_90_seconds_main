@@ -1,0 +1,103 @@
+=== 当前 profile ===
+{
+  "enable_retry_for_missing_required": true,
+  "report_name": "company_a_amount_report",
+  "template_path": "data/template/template.xlsx",
+  "template_mode": "vertical",
+  "instruction": "请根据字段要求，从文档中提取信息并填写到模板中。",
+  "fields": [
+    {
+      "name": "项目名称",
+      "type": "text",
+      "output_format": "plain",
+      "required": true,
+      "extract_hint": "项目名称通常是项目/合同名称；若文中出现“叫XXX的项目”“XXX项目”或被中文引号包裹且紧邻‘项目’字样，优先提取该名称。"
+    },
+    {
+      "name": "甲方单位",
+      "type": "text",
+      "output_format": "plain",
+      "required": true
+    },
+    {
+      "name": "联系人",
+      "type": "text",
+      "output_format": "plain"
+    },
+    {
+      "name": "联系电话",
+      "type": "phone",
+      "output_format": "plain"
+    },
+    {
+      "name": "签订日期",
+      "type": "date",
+      "output_format": "YYYY年M月D日",
+      "required": true
+    },
+    {
+      "name": "合同金额",
+      "type": "money",
+      "output_format": "plain_number",
+      "required": true
+    },
+    {
+      "name": "需求说明",
+      "type": "text",
+      "output_format": "plain"
+    }
+  ]
+}
+
+=== 已读取文档内容（前800字符）===
+【文件名】train_2.txt
+昨天下午去厦门出差，路上还堵了好一会儿，不过最后总算赶上了。跟我们对接的是林泽宇，电话是 13788889999，他代表的是厦门海跃信息技术有限公司。我们这次谈成的是“企业档案数字化管理系统”这个项目，合同签订日期最后确认在 2026 年 4 月 2 号。金额那边写得很清楚，是 98000 元。顺便说一句，他们最关注的是历史档案批量导入以及全文检索功能，后面做说明的时候别漏掉。
+ 
+
+=== 开始模型推理 ===
+=== 模型原始抽取结果 ===
+{
+  "项目名称": "",
+  "甲方单位": "厦门海跃信息技术有限公司",
+  "联系人": "林泽宇",
+  "联系电话": "13788889999",
+  "签订日期": "2026 年 4 月 2 号",
+  "合同金额": "98000",
+  "需求说明": "历史档案批量导入以及全文检索功能"
+}
+[WARN] 首次抽取后关键字段缺失：['项目名称']
+=== 二次提取返回结果 ===
+{
+  "项目名称": ""
+}
+[WARN] 已执行二次提取，但没有补回任何字段
+[INFO] 规则兜底补回项目名称：企业档案数字化管理系统
+
+=== 按规则格式化后的结果 ===
+{
+  "项目名称": "企业档案数字化管理系统",
+  "甲方单位": "厦门海跃信息技术有限公司",
+  "联系人": "林泽宇",
+  "联系电话": "13788889999",
+  "签订日期": "2026年4月2日",
+  "合同金额": "98000",
+  "需求说明": "历史档案批量导入以及全文检索功能"
+}
+
+=== 运行耗时统计 ===
+读取 profile：0.0 秒
+读取文档：0.0 秒
+检索证据：0.0 秒
+构造 prompt：0.0 秒
+首次模型推理：2.542 秒
+补抽推理：0.398 秒
+模型推理总计：2.94 秒
+规则处理：0.0 秒
+写 JSON：0.0 秒
+写 Excel：0.034 秒
+总耗时：2.974 秒
+
+已生成：/home/wjhclr/a23_ai_demo/output/regression/train_2_txt/result.json
+已生成：/home/wjhclr/a23_ai_demo/output/regression/train_2_txt/result.xlsx
+已生成：/home/wjhclr/a23_ai_demo/output/regression/train_2_txt/report_bundle.json
+✅ 总耗时在 90 秒以内

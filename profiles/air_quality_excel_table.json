@@ -1,0 +1,19 @@
+{
+  "report_name": "air_quality_excel_table",
+  "task_mode": "table_records",
+  "template_path": "data/template/air_quality_template.xlsx",
+  "template_mode": "excel_table",
+  "header_row": 1,
+  "start_row": 2,
+  "instruction": "请从文档中提取所有空气质量监测站点记录，并输出为 records 数组。",
+  "fields": [
+    { "name": "城市", "type": "text", "output_format": "plain" },
+    { "name": "区", "type": "text", "output_format": "plain" },
+    { "name": "站点名称", "type": "text", "output_format": "plain" },
+    { "name": "空气质量指数", "type": "text", "output_format": "plain" },
+    { "name": "PM10监测值", "type": "text", "output_format": "plain" },
+    { "name": "PM2.5监测值", "type": "text", "output_format": "plain" },
+    { "name": "首要污染物", "type": "text", "output_format": "plain" },
+    { "name": "污染类型", "type": "text", "output_format": "plain" }
+  ]
+}

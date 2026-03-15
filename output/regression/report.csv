@@ -1,0 +1,10 @@
+case,success,accuracy,correct_fields,total_fields,total_seconds,within_90_seconds,model_inference_total_seconds,bundle_available,out_dir
+train_1.txt,True,1.0,7,7,2.554,True,2.543,True,/home/wjhclr/a23_ai_demo/output/regression/train_1_txt
+train_2.txt,True,1.0,7,7,2.974,True,2.94,True,/home/wjhclr/a23_ai_demo/output/regression/train_2_txt
+train_3.txt,True,1.0,7,7,3.283,True,3.271,True,/home/wjhclr/a23_ai_demo/output/regression/train_3_txt
+train_4.txt,True,1.0,7,7,3.254,True,3.244,True,/home/wjhclr/a23_ai_demo/output/regression/train_4_txt
+train_5.txt,True,1.0,7,7,3.285,True,3.25,True,/home/wjhclr/a23_ai_demo/output/regression/train_5_txt
+train_6.txt,True,1.0,7,7,2.895,True,2.856,True,/home/wjhclr/a23_ai_demo/output/regression/train_6_txt
+variants_1.txt,True,1.0,7,7,1.922,True,1.91,True,/home/wjhclr/a23_ai_demo/output/regression/variants_1_txt
+variants_2.txt,True,1.0,7,7,2.448,True,2.438,True,/home/wjhclr/a23_ai_demo/output/regression/variants_2_txt
+variants_3.txt,True,1.0,7,7,2.208,True,2.198,True,/home/wjhclr/a23_ai_demo/output/regression/variants_3_txt

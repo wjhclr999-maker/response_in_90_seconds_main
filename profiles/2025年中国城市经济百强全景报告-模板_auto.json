@@ -1,0 +1,41 @@
+{
+  "report_name": "2025年中国城市经济百强全景报告-模板",
+  "template_path": "data/template/2025年中国城市经济百强全景报告-模板.xlsx",
+  "instruction": "请从文档中提取所有记录，并按表格字段输出为 records 数组。重点字段包括：城市名、GDP总量（亿元）、常住人口（万）、人均GDP（元）、一般公共预算收入（亿元）。",
+  "task_mode": "table_records",
+  "template_mode": "excel_table",
+  "fields": [
+    {
+      "name": "城市名",
+      "type": "text",
+      "output_format": "plain",
+      "required": true
+    },
+    {
+      "name": "GDP总量（亿元）",
+      "type": "text",
+      "output_format": "plain",
+      "required": false
+    },
+    {
+      "name": "常住人口（万）",
+      "type": "text",
+      "output_format": "plain",
+      "required": false
+    },
+    {
+      "name": "人均GDP（元）",
+      "type": "text",
+      "output_format": "plain",
+      "required": false
+    },
+    {
+      "name": "一般公共预算收入（亿元）",
+      "type": "text",
+      "output_format": "plain",
+      "required": false
+    }
+  ],
+  "header_row": 1,
+  "start_row": 2
+}

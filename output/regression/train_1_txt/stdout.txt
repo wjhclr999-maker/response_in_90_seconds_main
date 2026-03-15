@@ -1,0 +1,103 @@
+=== 当前 profile ===
+{
+  "enable_retry_for_missing_required": true,
+  "report_name": "company_a_amount_report",
+  "template_path": "data/template/template.xlsx",
+  "template_mode": "vertical",
+  "instruction": "请根据字段要求，从文档中提取信息并填写到模板中。",
+  "fields": [
+    {
+      "name": "项目名称",
+      "type": "text",
+      "output_format": "plain",
+      "required": true,
+      "extract_hint": "项目名称通常是项目/合同名称；若文中出现“叫XXX的项目”“XXX项目”或被中文引号包裹且紧邻‘项目’字样，优先提取该名称。"
+    },
+    {
+      "name": "甲方单位",
+      "type": "text",
+      "output_format": "plain",
+      "required": true
+    },
+    {
+      "name": "联系人",
+      "type": "text",
+      "output_format": "plain"
+    },
+    {
+      "name": "联系电话",
+      "type": "phone",
+      "output_format": "plain"
+    },
+    {
+      "name": "签订日期",
+      "type": "date",
+      "output_format": "YYYY年M月D日",
+      "required": true
+    },
+    {
+      "name": "合同金额",
+      "type": "money",
+      "output_format": "plain_number",
+      "required": true
+    },
+    {
+      "name": "需求说明",
+      "type": "text",
+      "output_format": "plain"
+    }
+  ]
+}
+
+=== 已读取文档内容（前800字符）===
+【文件名】train_1.txt
+今天下午我们在福州那边碰了个头，本来一开始还在聊最近食堂是不是又涨价了，后来才说到正事。陈雨欣（13912345678）是福州云帆科技有限公司那边派来的联系人，这次主要是为了推进那个叫“智能仓储巡检平台”的项目。双方最后把签订时间定在 2026 年 3 月 15 日，合同总金额写的是 256000 元整。对方还特别强调，希望系统后续能支持移动端巡检记录同步和异常告警推送，这一点得记一下。
+ 
+
+=== 开始模型推理 ===
+=== 模型原始抽取结果 ===
+{
+  "项目名称": "",
+  "甲方单位": "福州云帆科技有限公司",
+  "联系人": "陈雨欣",
+  "联系电话": "13912345678",
+  "签订日期": "2026年3月15日",
+  "合同金额": "256000元整",
+  "需求说明": ""
+}
+[WARN] 首次抽取后关键字段缺失：['项目名称']
+=== 二次提取返回结果 ===
+{
+  "项目名称": ""
+}
+[WARN] 已执行二次提取，但没有补回任何字段
+[INFO] 规则兜底补回项目名称：智能仓储巡检平台
+
+=== 按规则格式化后的结果 ===
+{
+  "项目名称": "智能仓储巡检平台",
+  "甲方单位": "福州云帆科技有限公司",
+  "联系人": "陈雨欣",
+  "联系电话": "13912345678",
+  "签订日期": "2026年3月15日",
+  "合同金额": "256000",
+  "需求说明": ""
+}
+
+=== 运行耗时统计 ===
+读取 profile：0.0 秒
+读取文档：0.0 秒
+检索证据：0.0 秒
+构造 prompt：0.0 秒
+首次模型推理：2.174 秒
+补抽推理：0.369 秒
+模型推理总计：2.543 秒
+规则处理：0.0 秒
+写 JSON：0.0 秒
+写 Excel：0.01 秒
+总耗时：2.554 秒
+
+已生成：/home/wjhclr/a23_ai_demo/output/regression/train_1_txt/result.json
+已生成：/home/wjhclr/a23_ai_demo/output/regression/train_1_txt/result.xlsx
+已生成：/home/wjhclr/a23_ai_demo/output/regression/train_1_txt/report_bundle.json
+✅ 总耗时在 90 秒以内

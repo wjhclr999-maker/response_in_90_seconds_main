@@ -1,0 +1,50 @@
+{
+  "enable_retry_for_missing_required": true,
+  "report_name": "company_a_amount_report",
+  "task_mode": "single_record",
+  "template_path": "data/template/template.xlsx",
+  "template_mode": "vertical",
+  "instruction": "请根据字段要求，从文档中提取信息并填写到模板中。",
+  "fields": [
+    {
+      "name": "项目名称",
+      "type": "text",
+      "output_format": "plain",
+      "required": true,
+      "extract_hint": "项目名称通常是项目/合同名称；若文中出现“叫XXX的项目”“XXX项目”或被中文引号包裹且紧邻‘项目’字样，优先提取该名称。"
+    },
+    {
+      "name": "甲方单位",
+      "type": "text",
+      "output_format": "plain",
+      "required": true
+    },
+    {
+      "name": "联系人",
+      "type": "text",
+      "output_format": "plain"
+    },
+    {
+      "name": "联系电话",
+      "type": "phone",
+      "output_format": "plain"
+    },
+    {
+      "name": "签订日期",
+      "type": "date",
+      "output_format": "YYYY年M月D日",
+      "required": true
+    },
+    {
+      "name": "合同金额",
+      "type": "money",
+      "output_format": "plain_number",
+      "required": true
+    },
+    {
+      "name": "需求说明",
+      "type": "text",
+      "output_format": "plain"
+    }
+  ]
+}

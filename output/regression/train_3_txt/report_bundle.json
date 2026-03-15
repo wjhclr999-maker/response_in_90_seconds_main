@@ -1,0 +1,119 @@
+{
+  "meta": {
+    "report_type": "integrated_output_bundle",
+    "profile_name": "company_a_amount_report",
+    "template_path": "data/template/template.xlsx",
+    "input_char_count": 184,
+    "generated_outputs": {
+      "result_json": "/home/wjhclr/a23_ai_demo/output/regression/train_3_txt/result.json",
+      "result_xlsx": "/home/wjhclr/a23_ai_demo/output/regression/train_3_txt/result.xlsx"
+    }
+  },
+  "run_summary": {
+    "report_name": "company_a_amount_report",
+    "profile_path": "company_a_amount_report",
+    "input_char_count": 184,
+    "missing_required_fields": [],
+    "retried_fields": [
+      "项目名称"
+    ],
+    "total_seconds": 3.283,
+    "within_90_seconds": true,
+    "model_inference_seconds": 2.508
+  },
+  "runtime_metrics": {
+    "load_profile_seconds": 0.0,
+    "read_documents_seconds": 0.0,
+    "retrieval_seconds": 0.0,
+    "build_prompt_seconds": 0.0,
+    "model_inference_seconds": 2.508,
+    "retry_inference_seconds": 0.763,
+    "model_inference_total_seconds": 3.271,
+    "rule_processing_seconds": 0.0,
+    "write_json_seconds": 0.0,
+    "write_excel_seconds": 0.01,
+    "total_seconds": 3.283,
+    "within_90_seconds": true
+  },
+  "debug_result": {
+    "项目名称": {
+      "raw": "车间能耗监测分析平台",
+      "normalized": "车间能耗监测分析平台",
+      "final": "车间能耗监测分析平台",
+      "status": "ok"
+    },
+    "甲方单位": {
+      "raw": "泉州启辰智能设备有限公司",
+      "normalized": "泉州启辰智能设备有限公司",
+      "final": "泉州启辰智能设备有限公司",
+      "status": "ok"
+    },
+    "联系人": {
+      "raw": "周晓彤",
+      "normalized": "周晓彤",
+      "final": "周晓彤",
+      "status": "ok"
+    },
+    "联系电话": {
+      "raw": "13666667777",
+      "normalized": "13666667777",
+      "final": "13666667777",
+      "status": "ok"
+    },
+    "签订日期": {
+      "raw": "2026 年 5 月 20 日",
+      "normalized": "2026-05-20",
+      "final": "2026年5月20日",
+      "status": "ok"
+    },
+    "合同金额": {
+      "raw": "315000",
+      "normalized": "315000",
+      "final": "315000",
+      "status": "ok"
+    },
+    "需求说明": {
+      "raw": "要做实时能耗曲线展示，并且支持按车间和产线分维度统计",
+      "normalized": "要做实时能耗曲线展示，并且支持按车间和产线分维度统计",
+      "final": "要做实时能耗曲线展示，并且支持按车间和产线分维度统计",
+      "status": "ok"
+    }
+  },
+  "retrieval": {
+    "enabled": false,
+    "retrieval_url": "",
+    "top_k": 5,
+    "chunks_count": 0,
+    "chunks_preview": []
+  },
+  "field_evidence": {
+    "项目名称": {
+      "value": "车间能耗监测分析平台",
+      "evidence": null
+    },
+    "甲方单位": {
+      "value": "我们和泉州启辰智能设备有限公司",
+      "evidence": null
+    },
+    "联系人": {
+      "value": "周晓彤",
+      "evidence": null
+    },
+    "联系电话": {
+      "value": "13666667777",
+      "evidence": null
+    },
+    "签订日期": {
+      "value": "2026 年 5 月 20 日",
+      "evidence": null
+    },
+    "合同金额": {
+      "value": "315000",
+      "evidence": null
+    },
+    "需求说明": {
+      "value": "要做实时能耗曲线展示，并且支持按车间和产线分维度统计",
+      "evidence": null
+    }
+  }
+}

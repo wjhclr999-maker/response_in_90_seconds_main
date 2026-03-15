@@ -1,0 +1,119 @@
+{
+  "meta": {
+    "report_type": "integrated_output_bundle",
+    "profile_name": "company_a_amount_report",
+    "template_path": "data/template/template.xlsx",
+    "input_char_count": 193,
+    "generated_outputs": {
+      "result_json": "/home/wjhclr/a23_ai_demo/output/regression/train_5_txt/result.json",
+      "result_xlsx": "/home/wjhclr/a23_ai_demo/output/regression/train_5_txt/result.xlsx"
+    }
+  },
+  "run_summary": {
+    "report_name": "company_a_amount_report",
+    "profile_path": "company_a_amount_report",
+    "input_char_count": 193,
+    "missing_required_fields": [],
+    "retried_fields": [
+      "甲方单位"
+    ],
+    "total_seconds": 3.285,
+    "within_90_seconds": true,
+    "model_inference_seconds": 2.645
+  },
+  "runtime_metrics": {
+    "load_profile_seconds": 0.0,
+    "read_documents_seconds": 0.0,
+    "retrieval_seconds": 0.0,
+    "build_prompt_seconds": 0.0,
+    "model_inference_seconds": 2.645,
+    "retry_inference_seconds": 0.605,
+    "model_inference_total_seconds": 3.25,
+    "rule_processing_seconds": 0.0,
+    "write_json_seconds": 0.0,
+    "write_excel_seconds": 0.034,
+    "total_seconds": 3.285,
+    "within_90_seconds": true
+  },
+  "debug_result": {
+    "项目名称": {
+      "raw": "供应链订单协同平台",
+      "normalized": "供应链订单协同平台",
+      "final": "供应链订单协同平台",
+      "status": "ok"
+    },
+    "甲方单位": {
+      "raw": "漳州新衡软件有限公司",
+      "normalized": "漳州新衡软件有限公司",
+      "final": "漳州新衡软件有限公司",
+      "status": "ok"
+    },
+    "联系人": {
+      "raw": "许嘉诚",
+      "normalized": "许嘉诚",
+      "final": "许嘉诚",
+      "status": "ok"
+    },
+    "联系电话": {
+      "raw": "18823456789",
+      "normalized": "18823456789",
+      "final": "18823456789",
+      "status": "ok"
+    },
+    "签订日期": {
+      "raw": "2026 年 7 月 12 日",
+      "normalized": "2026-07-12",
+      "final": "2026年7月12日",
+      "status": "ok"
+    },
+    "合同金额": {
+      "raw": "468000",
+      "normalized": "468000",
+      "final": "468000",
+      "status": "ok"
+    },
+    "需求说明": {
+      "raw": "订单流转节点可视化，以及供应商、采购方、仓储方三端协同处理",
+      "normalized": "订单流转节点可视化，以及供应商、采购方、仓储方三端协同处理",
+      "final": "订单流转节点可视化，以及供应商、采购方、仓储方三端协同处理",
+      "status": "ok"
+    }
+  },
+  "retrieval": {
+    "enabled": false,
+    "retrieval_url": "",
+    "top_k": 5,
+    "chunks_count": 0,
+    "chunks_preview": []
+  },
+  "field_evidence": {
+    "项目名称": {
+      "value": "供应链订单协同平台",
+      "evidence": null
+    },
+    "甲方单位": {
+      "value": "漳州新衡软件有限公司",
+      "evidence": null
+    },
+    "联系人": {
+      "value": "许嘉诚",
+      "evidence": null
+    },
+    "联系电话": {
+      "value": "18823456789",
+      "evidence": null
+    },
+    "签订日期": {
+      "value": "2026 年 7 月 12 日",
+      "evidence": null
+    },
+    "合同金额": {
+      "value": "468000",
+      "evidence": null
+    },
+    "需求说明": {
+      "value": "订单流转节点可视化，以及供应商、采购方、仓储方三端协同处理",
+      "evidence": null
+    }
+  }
+}

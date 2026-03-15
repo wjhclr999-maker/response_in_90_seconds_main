@@ -1,0 +1,117 @@
+{
+  "meta": {
+    "report_type": "integrated_output_bundle",
+    "profile_name": "company_a_amount_report",
+    "template_path": "data/template/template.xlsx",
+    "input_char_count": 203,
+    "generated_outputs": {
+      "result_json": "/home/wjhclr/a23_ai_demo/output/regression/train_6_txt/result.json",
+      "result_xlsx": "/home/wjhclr/a23_ai_demo/output/regression/train_6_txt/result.xlsx"
+    }
+  },
+  "run_summary": {
+    "report_name": "company_a_amount_report",
+    "profile_path": "company_a_amount_report",
+    "input_char_count": 203,
+    "missing_required_fields": [],
+    "retried_fields": [],
+    "total_seconds": 2.895,
+    "within_90_seconds": true,
+    "model_inference_seconds": 2.856
+  },
+  "runtime_metrics": {
+    "load_profile_seconds": 0.0,
+    "read_documents_seconds": 0.0,
+    "retrieval_seconds": 0.0,
+    "build_prompt_seconds": 0.0,
+    "model_inference_seconds": 2.856,
+    "retry_inference_seconds": 0.0,
+    "model_inference_total_seconds": 2.856,
+    "rule_processing_seconds": 0.0,
+    "write_json_seconds": 0.02,
+    "write_excel_seconds": 0.018,
+    "total_seconds": 2.895,
+    "within_90_seconds": true
+  },
+  "debug_result": {
+    "项目名称": {
+      "raw": "校园设备报修管理平台",
+      "normalized": "校园设备报修管理平台",
+      "final": "校园设备报修管理平台",
+      "status": "ok"
+    },
+    "甲方单位": {
+      "raw": "莆田星联网络科技有限公司",
+      "normalized": "莆田星联网络科技有限公司",
+      "final": "莆田星联网络科技有限公司",
+      "status": "ok"
+    },
+    "联系人": {
+      "raw": "苏雅宁",
+      "normalized": "苏雅宁",
+      "final": "苏雅宁",
+      "status": "ok"
+    },
+    "联系电话": {
+      "raw": "18655556666",
+      "normalized": "18655556666",
+      "final": "18655556666",
+      "status": "ok"
+    },
+    "签订日期": {
+      "raw": "2026 年 8 月 3 日",
+      "normalized": "2026-08-03",
+      "final": "2026年8月3日",
+      "status": "ok"
+    },
+    "合同金额": {
+      "raw": "76500 元",
+      "normalized": "76500",
+      "final": "76500",
+      "status": "ok"
+    },
+    "需求说明": {
+      "raw": "学生端报修提交、维修进度查询，以及后台统计高频故障类型",
+      "normalized": "学生端报修提交、维修进度查询，以及后台统计高频故障类型",
+      "final": "学生端报修提交、维修进度查询，以及后台统计高频故障类型",
+      "status": "ok"
+    }
+  },
+  "retrieval": {
+    "enabled": false,
+    "retrieval_url": "",
+    "top_k": 5,
+    "chunks_count": 0,
+    "chunks_preview": []
+  },
+  "field_evidence": {
+    "项目名称": {
+      "value": "校园设备报修管理平台",
+      "evidence": null
+    },
+    "甲方单位": {
+      "value": "莆田星联网络科技有限公司",
+      "evidence": null
+    },
+    "联系人": {
+      "value": "苏雅宁",
+      "evidence": null
+    },
+    "联系电话": {
+      "value": "18655556666",
+      "evidence": null
+    },
+    "签订日期": {
+      "value": "2026 年 8 月 3 日",
+      "evidence": null
+    },
+    "合同金额": {
+      "value": "76500 元",
+      "evidence": null
+    },
+    "需求说明": {
+      "value": "学生端报修提交、维修进度查询，以及后台统计高频故障类型",
+      "evidence": null
+    }
+  }
+}

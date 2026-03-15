@@ -1,0 +1,112 @@
+=== 当前 profile ===
+{
+  "enable_retry_for_missing_required": true,
+  "report_name": "company_a_amount_report",
+  "template_path": "data/template/template.xlsx",
+  "template_mode": "vertical",
+  "instruction": "请根据字段要求，从文档中提取信息并填写到模板中。",
+  "fields": [
+    {
+      "name": "项目名称",
+      "type": "text",
+      "output_format": "plain",
+      "required": true,
+      "extract_hint": "项目名称通常是项目/合同名称；若文中出现“叫XXX的项目”“XXX项目”或被中文引号包裹且紧邻‘项目’字样，优先提取该名称。"
+    },
+    {
+      "name": "甲方单位",
+      "type": "text",
+      "output_format": "plain",
+      "required": true
+    },
+    {
+      "name": "联系人",
+      "type": "text",
+      "output_format": "plain"
+    },
+    {
+      "name": "联系电话",
+      "type": "phone",
+      "output_format": "plain"
+    },
+    {
+      "name": "签订日期",
+      "type": "date",
+      "output_format": "YYYY年M月D日",
+      "required": true
+    },
+    {
+      "name": "合同金额",
+      "type": "money",
+      "output_format": "plain_number",
+      "required": true
+    },
+    {
+      "name": "需求说明",
+      "type": "text",
+      "output_format": "plain"
+    }
+  ]
+}
+
+=== 已读取文档内容（前800字符）===
+【文件名】train_5.txt
+今天一早和客户开会，前面还先讨论了预算，后面才正式把方案定下来。漳州新衡软件有限公司这边派来的是许嘉诚，联系电话是 18823456789。我们这次最终敲定的是“供应链订单协同平台”这个项目，签订时间写的是 2026 年 7 月 12 日。合同总价合计 468000 元整。对方比较在意的是订单流转节点可视化，以及供应商、采购方、仓储方三端协同处理。
+ 
+
+=== 开始模型推理 ===
+=== 模型原始抽取结果 ===
+{
+  "项目名称": "供应链订单协同平台",
+  "甲方单位": "",
+  "联系人": "许嘉诚",
+  "联系电话": "18823456789",
+  "签订日期": "2026 年 7 月 12 日",
+  "合同金额": "468000",
+  "需求说明": "订单流转节点可视化，以及供应商、采购方、仓储方三端协同处理"
+}
+[WARN] 首次抽取后关键字段缺失：['甲方单位']
+=== 二次提取返回结果 ===
+{
+  "甲方单位": "漳州新衡软件有限公司"
+}
+[INFO] 已触发二次提取并补回字段：['甲方单位']
+=== 二次提取后的模型原始结果 ===
+{
+  "项目名称": "供应链订单协同平台",
+  "甲方单位": "漳州新衡软件有限公司",
+  "联系人": "许嘉诚",
+  "联系电话": "18823456789",
+  "签订日期": "2026 年 7 月 12 日",
+  "合同金额": "468000",
+  "需求说明": "订单流转节点可视化，以及供应商、采购方、仓储方三端协同处理"
+}
+
+=== 按规则格式化后的结果 ===
+{
+  "项目名称": "供应链订单协同平台",
+  "甲方单位": "漳州新衡软件有限公司",
+  "联系人": "许嘉诚",
+  "联系电话": "18823456789",
+  "签订日期": "2026年7月12日",
+  "合同金额": "468000",
+  "需求说明": "订单流转节点可视化，以及供应商、采购方、仓储方三端协同处理"
+}
+
+=== 运行耗时统计 ===
+读取 profile：0.0 秒
+读取文档：0.0 秒
+检索证据：0.0 秒
+构造 prompt：0.0 秒
+首次模型推理：2.645 秒
+补抽推理：0.605 秒
+模型推理总计：3.25 秒
+规则处理：0.0 秒
+写 JSON：0.0 秒
+写 Excel：0.034 秒
+总耗时：3.285 秒
+
+已生成：/home/wjhclr/a23_ai_demo/output/regression/train_5_txt/result.json
+已生成：/home/wjhclr/a23_ai_demo/output/regression/train_5_txt/result.xlsx
+已生成：/home/wjhclr/a23_ai_demo/output/regression/train_5_txt/report_bundle.json
+✅ 总耗时在 90 秒以内

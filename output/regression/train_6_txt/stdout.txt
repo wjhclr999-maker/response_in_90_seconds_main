@@ -1,0 +1,96 @@
+=== 当前 profile ===
+{
+  "enable_retry_for_missing_required": true,
+  "report_name": "company_a_amount_report",
+  "template_path": "data/template/template.xlsx",
+  "template_mode": "vertical",
+  "instruction": "请根据字段要求，从文档中提取信息并填写到模板中。",
+  "fields": [
+    {
+      "name": "项目名称",
+      "type": "text",
+      "output_format": "plain",
+      "required": true,
+      "extract_hint": "项目名称通常是项目/合同名称；若文中出现“叫XXX的项目”“XXX项目”或被中文引号包裹且紧邻‘项目’字样，优先提取该名称。"
+    },
+    {
+      "name": "甲方单位",
+      "type": "text",
+      "output_format": "plain",
+      "required": true
+    },
+    {
+      "name": "联系人",
+      "type": "text",
+      "output_format": "plain"
+    },
+    {
+      "name": "联系电话",
+      "type": "phone",
+      "output_format": "plain"
+    },
+    {
+      "name": "签订日期",
+      "type": "date",
+      "output_format": "YYYY年M月D日",
+      "required": true
+    },
+    {
+      "name": "合同金额",
+      "type": "money",
+      "output_format": "plain_number",
+      "required": true
+    },
+    {
+      "name": "需求说明",
+      "type": "text",
+      "output_format": "plain"
+    }
+  ]
+}
+
+=== 已读取文档内容（前800字符）===
+【文件名】train_6.txt
+本来只是想简单碰一下需求，结果越聊越细，连后期维护都谈到了。最后确认由莆田星联网络科技有限公司作为甲方单位，联系人是苏雅宁，电话 18655556666。这次合作对应的是那个“校园设备报修管理平台”项目，双方约定签订日期为 2026 年 8 月 3 日。合同金额写成了 76500 元。需求方面，对方明确说希望支持学生端报修提交、维修进度查询，以及后台统计高频故障类型。
+ 
+
+=== 开始模型推理 ===
+=== 模型原始抽取结果 ===
+{
+  "项目名称": "校园设备报修管理平台",
+  "甲方单位": "莆田星联网络科技有限公司",
+  "联系人": "苏雅宁",
+  "联系电话": "18655556666",
+  "签订日期": "2026 年 8 月 3 日",
+  "合同金额": "76500 元",
+  "需求说明": "学生端报修提交、维修进度查询，以及后台统计高频故障类型"
+}
+
+=== 按规则格式化后的结果 ===
+{
+  "项目名称": "校园设备报修管理平台",
+  "甲方单位": "莆田星联网络科技有限公司",
+  "联系人": "苏雅宁",
+  "联系电话": "18655556666",
+  "签订日期": "2026年8月3日",
+  "合同金额": "76500",
+  "需求说明": "学生端报修提交、维修进度查询，以及后台统计高频故障类型"
+}
+
+=== 运行耗时统计 ===
+读取 profile：0.0 秒
+读取文档：0.0 秒
+检索证据：0.0 秒
+构造 prompt：0.0 秒
+首次模型推理：2.856 秒
+补抽推理：0.0 秒
+模型推理总计：2.856 秒
+规则处理：0.0 秒
+写 JSON：0.02 秒
+写 Excel：0.018 秒
+总耗时：2.895 秒
+
+已生成：/home/wjhclr/a23_ai_demo/output/regression/train_6_txt/result.json
+已生成：/home/wjhclr/a23_ai_demo/output/regression/train_6_txt/result.xlsx
+已生成：/home/wjhclr/a23_ai_demo/output/regression/train_6_txt/report_bundle.json
+✅ 总耗时在 90 秒以内

@@ -1,0 +1,117 @@
+{
+  "meta": {
+    "report_type": "integrated_output_bundle",
+    "profile_name": "company_a_amount_report",
+    "template_path": "data/template/template.xlsx",
+    "input_char_count": 213,
+    "generated_outputs": {
+      "result_json": "/home/wjhclr/a23_ai_demo/output/regression/train_1_txt/result.json",
+      "result_xlsx": "/home/wjhclr/a23_ai_demo/output/regression/train_1_txt/result.xlsx"
+    }
+  },
+  "run_summary": {
+    "report_name": "company_a_amount_report",
+    "profile_path": "company_a_amount_report",
+    "input_char_count": 213,
+    "missing_required_fields": [],
+    "retried_fields": [],
+    "total_seconds": 2.554,
+    "within_90_seconds": true,
+    "model_inference_seconds": 2.174
+  },
+  "runtime_metrics": {
+    "load_profile_seconds": 0.0,
+    "read_documents_seconds": 0.0,
+    "retrieval_seconds": 0.0,
+    "build_prompt_seconds": 0.0,
+    "model_inference_seconds": 2.174,
+    "retry_inference_seconds": 0.369,
+    "model_inference_total_seconds": 2.543,
+    "rule_processing_seconds": 0.0,
+    "write_json_seconds": 0.0,
+    "write_excel_seconds": 0.01,
+    "total_seconds": 2.554,
+    "within_90_seconds": true
+  },
+  "debug_result": {
+    "项目名称": {
+      "raw": "智能仓储巡检平台",
+      "normalized": "智能仓储巡检平台",
+      "final": "智能仓储巡检平台",
+      "status": "ok"
+    },
+    "甲方单位": {
+      "raw": "福州云帆科技有限公司",
+      "normalized": "福州云帆科技有限公司",
+      "final": "福州云帆科技有限公司",
+      "status": "ok"
+    },
+    "联系人": {
+      "raw": "陈雨欣",
+      "normalized": "陈雨欣",
+      "final": "陈雨欣",
+      "status": "ok"
+    },
+    "联系电话": {
+      "raw": "13912345678",
+      "normalized": "13912345678",
+      "final": "13912345678",
+      "status": "ok"
+    },
+    "签订日期": {
+      "raw": "2026年3月15日",
+      "normalized": "2026-03-15",
+      "final": "2026年3月15日",
+      "status": "ok"
+    },
+    "合同金额": {
+      "raw": "256000元整",
+      "normalized": "256000",
+      "final": "256000",
+      "status": "ok"
+    },
+    "需求说明": {
+      "raw": "",
+      "normalized": "",
+      "final": "",
+      "status": "empty"
+    }
+  },
+  "retrieval": {
+    "enabled": false,
+    "retrieval_url": "",
+    "top_k": 5,
+    "chunks_count": 0,
+    "chunks_preview": []
+  },
+  "field_evidence": {
+    "项目名称": {
+      "value": "智能仓储巡检平台",
+      "evidence": null
+    },
+    "甲方单位": {
+      "value": "福州云帆科技有限公司",
+      "evidence": null
+    },
+    "联系人": {
+      "value": "陈雨欣",
+      "evidence": null
+    },
+    "联系电话": {
+      "value": "13912345678",
+      "evidence": null
+    },
+    "签订日期": {
+      "value": "2026年3月15日",
+      "evidence": null
+    },
+    "合同金额": {
+      "value": "256000元整",
+      "evidence": null
+    },
+    "需求说明": {
+      "value": "",
+      "evidence": null
+    }
+  }
+}

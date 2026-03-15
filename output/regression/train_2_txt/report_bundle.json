@@ -1,0 +1,117 @@
+{
+  "meta": {
+    "report_type": "integrated_output_bundle",
+    "profile_name": "company_a_amount_report",
+    "template_path": "data/template/template.xlsx",
+    "input_char_count": 208,
+    "generated_outputs": {
+      "result_json": "/home/wjhclr/a23_ai_demo/output/regression/train_2_txt/result.json",
+      "result_xlsx": "/home/wjhclr/a23_ai_demo/output/regression/train_2_txt/result.xlsx"
+    }
+  },
+  "run_summary": {
+    "report_name": "company_a_amount_report",
+    "profile_path": "company_a_amount_report",
+    "input_char_count": 208,
+    "missing_required_fields": [],
+    "retried_fields": [],
+    "total_seconds": 2.974,
+    "within_90_seconds": true,
+    "model_inference_seconds": 2.542
+  },
+  "runtime_metrics": {
+    "load_profile_seconds": 0.0,
+    "read_documents_seconds": 0.0,
+    "retrieval_seconds": 0.0,
+    "build_prompt_seconds": 0.0,
+    "model_inference_seconds": 2.542,
+    "retry_inference_seconds": 0.398,
+    "model_inference_total_seconds": 2.94,
+    "rule_processing_seconds": 0.0,
+    "write_json_seconds": 0.0,
+    "write_excel_seconds": 0.034,
+    "total_seconds": 2.974,
+    "within_90_seconds": true
+  },
+  "debug_result": {
+    "项目名称": {
+      "raw": "企业档案数字化管理系统",
+      "normalized": "企业档案数字化管理系统",
+      "final": "企业档案数字化管理系统",
+      "status": "ok"
+    },
+    "甲方单位": {
+      "raw": "厦门海跃信息技术有限公司",
+      "normalized": "厦门海跃信息技术有限公司",
+      "final": "厦门海跃信息技术有限公司",
+      "status": "ok"
+    },
+    "联系人": {
+      "raw": "林泽宇",
+      "normalized": "林泽宇",
+      "final": "林泽宇",
+      "status": "ok"
+    },
+    "联系电话": {
+      "raw": "13788889999",
+      "normalized": "13788889999",
+      "final": "13788889999",
+      "status": "ok"
+    },
+    "签订日期": {
+      "raw": "2026 年 4 月 2 号",
+      "normalized": "2026-04-02",
+      "final": "2026年4月2日",
+      "status": "ok"
+    },
+    "合同金额": {
+      "raw": "98000",
+      "normalized": "98000",
+      "final": "98000",
+      "status": "ok"
+    },
+    "需求说明": {
+      "raw": "历史档案批量导入以及全文检索功能",
+      "normalized": "历史档案批量导入以及全文检索功能",
+      "final": "历史档案批量导入以及全文检索功能",
+      "status": "ok"
+    }
+  },
+  "retrieval": {
+    "enabled": false,
+    "retrieval_url": "",
+    "top_k": 5,
+    "chunks_count": 0,
+    "chunks_preview": []
+  },
+  "field_evidence": {
+    "项目名称": {
+      "value": "企业档案数字化管理系统",
+      "evidence": null
+    },
+    "甲方单位": {
+      "value": "厦门海跃信息技术有限公司",
+      "evidence": null
+    },
+    "联系人": {
+      "value": "林泽宇",
+      "evidence": null
+    },
+    "联系电话": {
+      "value": "13788889999",
+      "evidence": null
+    },
+    "签订日期": {
+      "value": "2026 年 4 月 2 号",
+      "evidence": null
+    },
+    "合同金额": {
+      "value": "98000",
+      "evidence": null
+    },
+    "需求说明": {
+      "value": "历史档案批量导入以及全文检索功能",
+      "evidence": null
+    }
+  }
+}

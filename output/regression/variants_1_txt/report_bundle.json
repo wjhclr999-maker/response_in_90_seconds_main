@@ -1,0 +1,121 @@
+{
+  "meta": {
+    "report_type": "integrated_output_bundle",
+    "profile_name": "company_a_amount_report",
+    "template_path": "data/template/template.xlsx",
+    "input_char_count": 65,
+    "generated_outputs": {
+      "result_json": "/home/wjhclr/a23_ai_demo/output/regression/variants_1_txt/result.json",
+      "result_xlsx": "/home/wjhclr/a23_ai_demo/output/regression/variants_1_txt/result.xlsx"
+    }
+  },
+  "run_summary": {
+    "report_name": "company_a_amount_report",
+    "profile_path": "company_a_amount_report",
+    "input_char_count": 65,
+    "missing_required_fields": [
+      "甲方单位",
+      "签订日期",
+      "合同金额"
+    ],
+    "retried_fields": [],
+    "total_seconds": 1.922,
+    "within_90_seconds": true,
+    "model_inference_seconds": 1.236
+  },
+  "runtime_metrics": {
+    "load_profile_seconds": 0.0,
+    "read_documents_seconds": 0.0,
+    "retrieval_seconds": 0.0,
+    "build_prompt_seconds": 0.0,
+    "model_inference_seconds": 1.236,
+    "retry_inference_seconds": 0.674,
+    "model_inference_total_seconds": 1.91,
+    "rule_processing_seconds": 0.0,
+    "write_json_seconds": 0.0,
+    "write_excel_seconds": 0.01,
+    "total_seconds": 1.922,
+    "within_90_seconds": true
+  },
+  "debug_result": {
+    "项目名称": {
+      "raw": "智慧楼宇巡检系统",
+      "normalized": "智慧楼宇巡检系统",
+      "final": "智慧楼宇巡检系统",
+      "status": "ok"
+    },
+    "甲方单位": {
+      "raw": "",
+      "normalized": "",
+      "final": "",
+      "status": "empty"
+    },
+    "联系人": {
+      "raw": "",
+      "normalized": "",
+      "final": "",
+      "status": "empty"
+    },
+    "联系电话": {
+      "raw": "",
+      "normalized": "",
+      "final": "",
+      "status": "empty"
+    },
+    "签订日期": {
+      "raw": "",
+      "normalized": "",
+      "final": "",
+      "status": "empty"
+    },
+    "合同金额": {
+      "raw": "",
+      "normalized": "",
+      "final": "",
+      "status": "empty"
+    },
+    "需求说明": {
+      "raw": "",
+      "normalized": "",
+      "final": "",
+      "status": "empty"
+    }
+  },
+  "retrieval": {
+    "enabled": false,
+    "retrieval_url": "",
+    "top_k": 5,
+    "chunks_count": 0,
+    "chunks_preview": []
+  },
+  "field_evidence": {
+    "项目名称": {
+      "value": "智慧楼宇巡检系统",
+      "evidence": null
+    },
+    "甲方单位": {
+      "value": "",
+      "evidence": null
+    },
+    "联系人": {
+      "value": "",
+      "evidence": null
+    },
+    "联系电话": {
+      "value": "",
+      "evidence": null
+    },
+    "签订日期": {
+      "value": "",
+      "evidence": null
+    },
+    "合同金额": {
+      "value": "",
+      "evidence": null
+    },
+    "需求说明": {
+      "value": "",
+      "evidence": null
+    }
+  }
+}

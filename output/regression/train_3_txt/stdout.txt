@@ -1,0 +1,114 @@
+=== 当前 profile ===
+{
+  "enable_retry_for_missing_required": true,
+  "report_name": "company_a_amount_report",
+  "template_path": "data/template/template.xlsx",
+  "template_mode": "vertical",
+  "instruction": "请根据字段要求，从文档中提取信息并填写到模板中。",
+  "fields": [
+    {
+      "name": "项目名称",
+      "type": "text",
+      "output_format": "plain",
+      "required": true,
+      "extract_hint": "项目名称通常是项目/合同名称；若文中出现“叫XXX的项目”“XXX项目”或被中文引号包裹且紧邻‘项目’字样，优先提取该名称。"
+    },
+    {
+      "name": "甲方单位",
+      "type": "text",
+      "output_format": "plain",
+      "required": true
+    },
+    {
+      "name": "联系人",
+      "type": "text",
+      "output_format": "plain"
+    },
+    {
+      "name": "联系电话",
+      "type": "phone",
+      "output_format": "plain"
+    },
+    {
+      "name": "签订日期",
+      "type": "date",
+      "output_format": "YYYY年M月D日",
+      "required": true
+    },
+    {
+      "name": "合同金额",
+      "type": "money",
+      "output_format": "plain_number",
+      "required": true
+    },
+    {
+      "name": "需求说明",
+      "type": "text",
+      "output_format": "plain"
+    }
+  ]
+}
+
+=== 已读取文档内容（前800字符）===
+【文件名】train_3.txt
+今天上午本来还在下雨，结果下午天就放晴了。我们和泉州启辰智能设备有限公司那边把合作细节基本都敲定了，对接人是周晓彤（13666667777）。这回签的是“车间能耗监测分析平台”项目，正式日期定为 2026 年 5 月 20 日。合同总价是 315000 元整。对方提的重点需求是要做实时能耗曲线展示，并且支持按车间和产线分维度统计。
+ 
+
+=== 开始模型推理 ===
+=== 模型原始抽取结果 ===
+{
+  "项目名称": "",
+  "甲方单位": "",
+  "联系人": "周晓彤",
+  "联系电话": "13666667777",
+  "签订日期": "2026 年 5 月 20 日",
+  "合同金额": "315000",
+  "需求说明": "要做实时能耗曲线展示，并且支持按车间和产线分维度统计"
+}
+[WARN] 首次抽取后关键字段缺失：['项目名称', '甲方单位']
+=== 二次提取返回结果 ===
+{
+  "项目名称": "车间能耗监测分析平台",
+  "甲方单位": ""
+}
+[INFO] 已触发二次提取并补回字段：['项目名称']
+=== 二次提取后的模型原始结果 ===
+{
+  "项目名称": "车间能耗监测分析平台",
+  "甲方单位": "",
+  "联系人": "周晓彤",
+  "联系电话": "13666667777",
+  "签订日期": "2026 年 5 月 20 日",
+  "合同金额": "315000",
+  "需求说明": "要做实时能耗曲线展示，并且支持按车间和产线分维度统计"
+}
+[INFO] 规则兜底补回甲方单位：我们和泉州启辰智能设备有限公司
+
+=== 按规则格式化后的结果 ===
+{
+  "项目名称": "车间能耗监测分析平台",
+  "甲方单位": "泉州启辰智能设备有限公司",
+  "联系人": "周晓彤",
+  "联系电话": "13666667777",
+  "签订日期": "2026年5月20日",
+  "合同金额": "315000",
+  "需求说明": "要做实时能耗曲线展示，并且支持按车间和产线分维度统计"
+}
+
+=== 运行耗时统计 ===
+读取 profile：0.0 秒
+读取文档：0.0 秒
+检索证据：0.0 秒
+构造 prompt：0.0 秒
+首次模型推理：2.508 秒
+补抽推理：0.763 秒
+模型推理总计：3.271 秒
+规则处理：0.0 秒
+写 JSON：0.0 秒
+写 Excel：0.01 秒
+总耗时：3.283 秒
+
+已生成：/home/wjhclr/a23_ai_demo/output/regression/train_3_txt/result.json
+已生成：/home/wjhclr/a23_ai_demo/output/regression/train_3_txt/result.xlsx
+已生成：/home/wjhclr/a23_ai_demo/output/regression/train_3_txt/report_bundle.json
+✅ 总耗时在 90 秒以内
